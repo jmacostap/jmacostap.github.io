@@ -145,7 +145,7 @@ for (const i of words_by_size) {
   }
 }
 const words_by_groups = Object.keys(groups).sort((a, b) => groups[a] - groups[b]);  // increasing
-let limit = 5;
+limit = 5;
 for (const i of words_by_groups) {
   if (sizes[i] === minmaxsize && !valids.includes(i)) {
     show(i + " es inválida con " + groups[i] + " grupos y máximo tamaño " + sizes[i])
@@ -157,16 +157,22 @@ for (const i of words_by_groups) {
 }
 }
 </script>
+<style>
+input {
+  font-family: 'Courier New', monospace;
+  font-size:3em;
+}
+</style>
 </head>
 <body>
 <form>
 <table>
-<tr><td><input type="text" id="w0"></td><td><input type="text" id="s0"></td></tr>
-<tr><td><input type="text" id="w1"></td><td><input type="text" id="s1"></td></tr>
-<tr><td><input type="text" id="w2"></td><td><input type="text" id="s2"></td></tr>
-<tr><td><input type="text" id="w3"></td><td><input type="text" id="s3"></td></tr>
-<tr><td><input type="text" id="w4"></td><td><input type="text" id="s4"></td></tr>
-<tr><td><input type = "button" onclick = "findcandidates()" value = "Procesar"></td></tr>
+<tr><td><input type="text" id="w0" size=5 maxlength=5></td><td><input type="text" id="s0" size=5 maxlength=5></td></tr>
+<tr><td><input type="text" id="w1" size=5 maxlength=5></td><td><input type="text" id="s1" size=5 maxlength=5></td></tr>
+<tr><td><input type="text" id="w2" size=5 maxlength=5></td><td><input type="text" id="s2" size=5 maxlength=5></td></tr>
+<tr><td><input type="text" id="w3" size=5 maxlength=5></td><td><input type="text" id="s3" size=5 maxlength=5></td></tr>
+<tr><td><input type="text" id="w4" size=5 maxlength=5></td><td><input type="text" id="s4" size=5 maxlength=5></td></tr>
+<tr><td><input type="button" onclick="findcandidates()" value="Procesar"></td></tr>
 <tr><td colspan=2>
 <textarea rows="25" cols="70" id="display">
 </textarea>
